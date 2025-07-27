@@ -1,5 +1,5 @@
 
-const billitem = [
+const billitems = [
   { id: 1, Itemname: "butter", price: 250 },
   { id: 2, Itemname: "Bread", price: 150 },
   { id: 3, Itemname: "onion", price: 50 },
@@ -12,35 +12,27 @@ const billitem = [
   { id: 10, Itemname: "badam", price: 800 }
 ];
 
-const table = document.querySelector(".table1");
+const table  = document.querySelector(".table1")
+const searchInput = document.querySelector("input")
 
-function createTableHeader() {
-  const headerRow = document.createElement("tr");
-  ["S.N", "Item Name", "Price"].forEach(title => {
-    const th = document.createElement("th");
-    th.textContent = title;
-    headerRow.appendChild(th);
-  });
-  table.appendChild(headerRow);
+const createTableHeader = function(){
+  const HEaderRow = document.createElement("tr");
+  const idElement = document.createElement("th")
+  idElement.innerHTML = "s.n"
+  const itemNAme = document.createElement("th")
+  itemNAme.innerHTML = "Poduct Name"
+  const price = document.createElement("th")
+  price.innerHTML = "Pice";
+
+  HEaderRow.appendChild(idElement,itemNAme, price);
+  table.apendChild("HEaderRow") 
+} 
+
+const createTableBody = function (){
+
 }
 
-function createTableBody() {
-  const frag = document.createDocumentFragment();
-  billitem.forEach(item => {
-    const tr = document.createElement("tr");
-    [item.id, item.Itemname, item.price].forEach(val => {
-      const td = document.createElement("td");
-      td.textContent = val;
-      tr.appendChild(td);
-    });
-    frag.appendChild(tr);
-  });
-  table.appendChild(frag);
+const createTable = function(){
+  reateTableHeader();
+  createTableBody();  
 }
-
-function createTable(){
-    table.innerHTML = "";
-    createTableHeader();
-    createTableBody();
-}
-
