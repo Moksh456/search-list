@@ -18,7 +18,7 @@ const searchInput = document.querySelector("input")
 const createTableHeader = function(){
   const HEaderRow = document.createElement("tr");
   const idElement = document.createElement("th")
-  idElement.innerHTML = "s.n"
+  idElement.innerHTML = "s.n" 
   const itemNAme = document.createElement("th")
   itemNAme.innerHTML = "Poduct Name"
   const price = document.createElement("th")
@@ -36,3 +36,4 @@ const createTable = function(){
   reateTableHeader();
   createTableBody();  
 }
+creaTable()
